@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Assignment 5 </title>
+        <script>
+            var m = parseInt(prompt("Enter marks in Maths"));
+            var p = parseInt(prompt("Enter marks in Physics"));
+            var c = parseInt(prompt("Enter marks in Chemistry"));
+            function gradecalc(m,p,c)
+            {
+                var total = (m+p+c);
+                document.write("Total is :"+total+"<br/>");
+                var average = total/3;
+                document.write("Average is :" + average+"<br/>");
+                if(average <=70)
+                    document.write("Grade C");
+                else if(average >70 && average<=90)
+                    document.write("Grade B");
+                else
+                    document.write("Grade A");
+            }
+            gradecalc(m,p,c);
+        </script>
+    </head>
+</html>

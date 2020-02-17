@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>If else ladder</title>
+        <script>
+            alert("Please Enter the marks of the students");
+            var a = parseInt(prompt("Enter marks in javascript"));
+            var b = parseInt(prompt("Enter marks in java"));
+            var c = parseInt(prompt("Enter marks in C++"));
+            var j = a+b+c;
+            var k = j/3;
+            if(k<35)
+            {
+                document.write("Student is failed");
+            }
+            else if(k>=35 && k<=59)
+            {
+                document.write("Student has got C grade");
+            }
+            else if(k>=60 && k<=74)
+            {
+                document.write("Student has got a B grade");
+            }
+            else
+            {
+                document.write("Student has got an A grade");
+            }
+        </script>
+    </head>
+</html>
