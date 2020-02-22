@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>On mouseover and on mouseout userdefined function</title>
+        <script>
+            function handlemouseover(x)
+            {
+                x.style.color = "blue";
+                x.style.backgroundColor= "green";
+                x.innerHTML = "MOUSEOVER";
+            }
+            function handlemouseout(x)
+            {
+                x.style.color = "green";
+                x.style.backgroundColor = "red";
+                x.innerHTML = "MOUSEOUT"; 
+            }
+        </script>
+    </head>
+    <body>
+        <p onmouseover="handlemouseover(this)" onmouseout="handlemouseout(this)">Wassup</p>
+    </body>
+</html>

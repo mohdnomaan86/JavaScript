@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Assigment
+        </title>
+        <script>
+            function adding()
+            {
+                var parent = document.getElementById("div1");
+                var child = document.createElement("p");
+                var text = document.createTextNode("TV-1500$");
+                child.appendChild(text);
+                parent.appendChild(child);
+            }
+            function deleting()
+            {
+                var parent = document.getElementById("div1");
+                var child = document.getElementById("para2");
+                parent.removeChild(child);
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id="div1">
+            <p id="para1">Laptop-1000$</p>
+            <p id="para2">Cellphone-300$</p>
+        </div>
+        <input type="button" value="add" onclick="adding()">
+        <input type="button" value="delete" onclick="deleting()">
+    </body>
+</html>

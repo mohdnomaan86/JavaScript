@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>On mouseup and On mousedown</title>
+        <script>
+            function handlemouseup(x)
+            {
+                x.style.color = "blue";
+                x.style.backgroundColor = "red";
+                x.innerHTML = "MOUSEUP";
+            }
+            function handlemousedown(x)
+            {
+                x.style.color = "green";
+                x.style.backgroundColor = "yellow";
+                x.innerHTML = "MOUSEDOWN";
+            }
+        </script>
+        <body>
+            <p onmouseup="handlemouseup(this)" onmousedown="handlemousedown(this)">UPDOWN</p>
+        </body>
+    </head>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>On Change</title>
+        <script>
+            function change(x)
+            {
+                document.bgColor=x;
+            }
+        </script>
+    </head>
+    <body>
+        <h1> This is to test the on change function in JavaScript</h1>
+        <br/>
+        <h2>Again just adding random</h2><br/><br/>
+        <select onclick="change(this.value)">
+            <option value="">Select a color</option>
+            <option value="blue">Blue</option>
+            <option value="grey">Grey</option>
+            <option value = "tomato">Tomato</option>
+        </select>
+    </body>
+</html>

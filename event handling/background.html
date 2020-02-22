@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Background Image</title>
+        <script>
+            function background(x)
+            {
+                document.getElementById("test").style.backgroundImage = "url("+x+")";
+            } 
+        </script>
+    </head>
+    <body>
+        <div id="test" style="height: 500PX; color:yellow">
+            <h1>This is gonna change the Backgroundc color</h1>
+            <select onchange="background(this.value)">
+                <option value="">Select an image</option>
+                <option value="images/download.jpg">First image</option>
+                <option value="images/stars.jpg">Stars</option>
+                <option value="images/blue.jpg">Blue</option>
+            </select>
+        </div>
+        
+    </body>
+</html>

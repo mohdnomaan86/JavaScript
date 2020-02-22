@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 6</title>
+        <script>
+            function handleonkeydown(x)
+            {
+                x.style.color = "red";
+                x.style.backgroundColor = "green"
+            }
+            function handleonkeyup(x)
+            {
+                x.style.color = "grey";
+                x.style.backgroundColor = "black";
+            }
+            function handleonkeypress(x)
+            {
+                x.style.color = "pink";
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>This is the sixth assignment in this course</h1>
+        <input type="text" onkeydown="handleonkeydown(this)" onkeyup="handleonkeyup(this)" onkeypress="handleonkeypress(this)">
+    </body>
+</html>

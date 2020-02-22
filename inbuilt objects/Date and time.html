@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Date and Time</title>
+        <script>
+            function settime()
+            {
+                setInterval(dateandtime,1000);
+            }
+            function dateandtime()
+            {
+                var d = new Date();
+                var s = d.toLocaleString();
+                document.getElementById("para").innerHTML=s;
+            }
+        </script>
+    </head>
+    <body onload="settime()">
+        <b>Current Time is</b><br/>
+        <p id="para"></p>
+    </body>
+</html>

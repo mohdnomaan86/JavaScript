@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create and Remove Node</title>
+        <script>
+            function deleteevent()
+            {
+                var parent = document.getElementById("div1");
+                var child = document.getElementById("p1");
+                parent.removeChild(child);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="div1">
+            <p id="p1">This is the first paragraph</p>
+            <p id = "p2">This is the second paragraph</p>
+        </div>
+        <input type="button" onclick="deleteevent()" value="remove">
+        
+    </body>
+</html>

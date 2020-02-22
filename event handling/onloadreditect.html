@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>On load redirect</title>
+        <script>
+            function handleredirection()
+            {
+                setTimeout(handleonload,3000);
+            }
+            function handleonload()
+            {
+                window.location ="http://google.com";
+            }
+        </script>
+    </head>
+    <body onload="handleredirection()">
+        <b>redirecting...</b><br/>
+        <b>in 5...</b><br/>
+        <b>4...</b><br/>
+        <b>3...</b><br/>
+        <b>2...</b><br/>
+        <b>1...</b><br/>
+
+
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>My Calculator</title>
+        <script>
+            function mycalc(x)
+            {
+                var a = parseInt(document.Calculator.num1.value);
+                var b = parseInt(document.Calculator.num2.value);
+                var z = document.Calculator.result;
+                if(x.value == "Add")
+                    z.value= a+b;
+                else if(x.value == "Sub")
+                    z.value = a-b;
+                else if(x.value == "Mul")
+                    z.value = a*b;
+                else
+                    z.value = a/b;
+            }
+        </script>
+    </head>
+    <body>
+        <form name="Calculator">
+        Number1 <input type="text" name="num1"><br/>
+        Number2 <input type="text" name="num2"><br/>
+        Result <input type="text" name = "result"> <br/><br>
+        <input type="button" name="Add" value="Add" onclick="mycalc(this)">
+        <input type="button" name="Sub" value="Sub" onclick="mycalc(this)">
+        <input type="button" name="Mul" value="Mul" onclick="mycalc(this)">
+        <input type="button" name="Div" value="Div" onclick="mycalc(this)">
+        </form>
+    </body>
+</html>

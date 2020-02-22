@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Throw</title>
+        <script>
+            function AgeValidation()
+            {
+                try{
+                    var x = (document.getElementById("age").value);
+                    if(x == "")
+                        throw "Age is required";
+                    if(x <18)
+                        throw "To young";
+                    
+                }
+                catch(obj)
+                {
+                    document.getElementById("01").innerHTML = obj;
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        Name : <input type="text" id="age">
+        <input type="button" value="Validate" onclick="AgeValidation()"/>
+        <p id="01"></p> 
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Debug
+        </title>
+        <script>
+            document.write("This is the first line in debugging");
+            function seeing(){
+            document.getElementById("01").innerHTML="This is the first para written dynamically";
+            }
+        </script>
+    </head>
+    <body onload="seeing()">
+        <p id="01" >Text</p>
+        <p id="02"></p>
+    </body>
+</html>

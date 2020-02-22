@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>On change go to web</title>
+        <script>
+            function website(x)
+            {
+                window.location=x;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>On clicking the below button you may select a website</h1>
+        <select onchange="website(this.value)">
+            <option value="">Select a website</option>
+            <option value="http://google.com">Google</option>
+            <option value= "http://facebook.com">Facebook</option>
+        </select>
+    </body>
+</html>

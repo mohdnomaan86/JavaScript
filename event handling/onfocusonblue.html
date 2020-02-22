@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>On Focus On Blue</title>
+        <script>
+            function handleonfocus(x)
+            {
+                x.style.color="blue";
+                x.style.backgroundColor = "grey";
+                
+            }
+            function handleonblur(x)
+            {
+                x.style.backgroundColor = "black";
+                x.style.color= "red";
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>This is going to change the color and backgroun of the text field</h1>
+        <input type="text"  onfocus="handleonfocus(this)" onblur="handleonblur(this)">
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Creating child</title>
+        <script>
+            function Removingchild()
+            {
+                var parent = document.getElementById("div1");
+                var child = document.getElementById("para1");
+                parent.removeChild(child);
+            }
+            function Createchild()
+            {
+                var parent = document.getElementById("div1");
+                var child = document.createElement("p");
+                var text = document.createTextNode("This is the dynimically created child");
+                child.appendChild(text);
+                parent.appendChild(child);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="div1">
+            <p id="para1">This is the first paragraph</p>
+            <p id="para2">This is the one gonna get removed</p>
+        </div>
+        <input type="button" onclick="Removingchild()" value="Remove">
+        <input type="button" value="Create" onclick="Createchild()">
+    </body>
+</html>
