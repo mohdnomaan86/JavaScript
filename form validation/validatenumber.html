@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Validate Numnber</title>
+        <script>
+            function validatenumber()
+            {
+                var x =document.validate.num.value;
+                if(isNaN(x) || x<1 ||x>10)
+                {
+                    alert("Enter a valid number");
+                    document.validate.num.focus();
+                    return false;
+                }
+                else{
+                    alert("Validation Succesful");
+                    return true;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="validate" action="validation.jsp" onsubmit="return validatenumber()">
+            Number: <input type="text" name="num">
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            AlphaNumeric Validation
+        </title>
+        <script>
+            function validate()
+            {
+                var z = /^[A-za-z0-9\s]+$/;
+                var x = document.form1.add.value;
+                var res = z.test(x);
+                if(res)
+                {
+                    alert("Validation Succesful");
+                    return true;
+                }
+                else{
+                    alert("Please enter a valid address");
+                    document.form1.add.focus();
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="form1" action="revalidate.jsp" onsubmit="return validate()">
+            <textarea name="add">Enter Addres:</textarea>
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>

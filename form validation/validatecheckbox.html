@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Validating Check Boxes</title>
+        <script>
+            function handlecheck()
+            {
+                var x = false;
+                if(document.getElementById("black").checked)
+                {
+                    x=true;
+                    alert("Black selected");
+                    return true;
+                }
+                if(document.getElementById("green").checked)
+                {
+                    x = true;
+                    alert("Green selected");
+                    return true;
+                    
+                }
+                else{
+                    alert("Choose a color");
+                    return false;
+
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="form1" action="revalidate.jsp" onsubmit="return handlecheck()">
+            <h1>Choose from any checbox:</h1>
+            <input type="checkbox" id="black" value="black">Black 
+            <input type="checkbox" value="green" id="green">Green
+            <input type="submit" value="choose">
+        </form>
+    </body>
+</html>

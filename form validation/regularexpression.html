@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Validating Regular Expression</title>
+        <script>
+            function validate()
+            {
+                var exp= /^[A-Za-z]+$/;
+                var j = document.form1.uname.value;
+                var result = exp.test(j);
+                if(result)
+                {
+                    alert("Validation Succesful");
+                    return true;
+                }
+                else
+                {
+                    document.form1.uname.focus();
+                    alert("Enter a valid username");
+                    return false;
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Validation of a Regular Expression</h1>
+        <form name="form1" action="revalidation.jsp" onsubmit="return validate()">
+           Username:  <input type="text" name="uname">
+            <input type="submit" value="submit">
+    </form>
+    </body>
+</html>

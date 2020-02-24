@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Validating radio button</title>
+        <script>
+            function validation()
+            {
+                var k =false;
+                var x = document.payment.chotu;
+                for(var i=0;i<x.length;i++)
+                {
+                    if(x[i].checked)
+                    {
+                       k=true;
+                       alert("Mode of payment selected!");
+                        return true;
+                    }
+                }
+                
+                if(k==false)
+                {
+                    alert("Please select a mode of payment");
+                    return false;
+                }
+            }
+        </script>
+        <body>
+            <h1>Please select mode of payment:</h1>
+            <form name="payment" action="revavlidate.jsp" onsubmit="return validation()">
+                <input type="radio" name="chotu" value="cod">Cash on Delivery
+                <input type="radio" name="chotu" value="credit">Credit Card
+                <input type="radio" name="chotu" value="debit">Debit Card
+                <input type="submit" value="Selected">
+            </form>
+        </body>
+    </head>
+</html>

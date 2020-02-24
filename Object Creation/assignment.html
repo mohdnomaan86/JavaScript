@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ASsignment</title>
+        <script>
+
+            function Product(id,name,details,price)
+            {
+                this.id=id;
+                this.name=name;
+                this.details=details;
+                this.price=price;
+                this.calculateDics= calculateDics;
+                this.displayProduct = displayProduct;
+            }
+
+            function calculateDics(percentage)
+            {
+                return this.price-(this.price*(percentage/100));
+            }
+
+            function displayProduct()
+            {
+                document.write("Name: "+this.name+"<br/>");
+                document.write("Details: "+this.details+"<br/>");
+                document.write("Price"+this.calculateDics(50)+"<br/>");
+            }
+
+            var obj = new Product(1,"OnePlus","Good",1000);
+            obj.displayProduct();
+
+        </script>
+    </head>
+</html>

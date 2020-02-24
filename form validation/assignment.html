@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment</title>
+        <script>
+            function validate()
+            {
+                var mail = document.form1.email.value;
+                var password = document.form1.passwo.value;
+                var phon = document.form1.phone.value;
+                if(mail =="")
+                {
+                    alert("Email is mandatory");
+                    document.form1.email.focus();
+                    return false;
+                }
+                if(password=="")
+                {
+                    alert("Password is mandatory");
+                    return false;
+                }
+                if(phon =="")
+                {
+                    alert("Phone is mandatory");
+                    return false;
+                }
+                var exp =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                result = exp.test(mail);
+                if(!result)
+                {
+                    alert("Enter a valid email");
+                    return false;
+                }
+                exp = /^[A-Za-z0-9]{5,8}$/;
+                result = exp.test(password);
+                if(!result)
+                {
+                    alert("Password should be minimum 5-8 char and alphanumeric");
+                    return false;
+                }
+                    exp = /^[0-9]{10}$/;
+                    result = exp.test(phon);
+                    var len = document.form1.phone.value;
+                    var a = len.length;
+                    if(!result)
+                    {
+                        alert("Enter a valid Phone number");
+                        return false;
+                    }
+                    if(a !=10)
+                    {
+                        alert("Phone length should be 10");
+                        return false;
+                    }
+                alert("Validation Succesful");
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <h1> User Registration:</h1>
+        <form name="form1" action="revalidation.jsp" onsubmit="return validate()">
+            Email: <input type="text" name="email">
+            Password: <input type="password" name="passwo">
+            Phone: <input type="text" name="phone">
+            <br/>
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>

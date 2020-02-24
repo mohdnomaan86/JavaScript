@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add category</title>
+        <script>
+            function ObjectCreate(text,name)
+            {
+                this.text = text;
+                this.name = name;
+                this.addCategory= addCategory;
+            }
+            function addCategory(category)
+            {
+                this.category=category;
+            }
+            var ob1 = new ObjectCreate("JavaScript","Java");
+            ob1.addCategory("Language");
+            document.write(ob1.text+"<br/>");
+            document.write(ob1.name+"<br/>");
+            document.write(ob1.category+"<br/>");
+        </script>
+    </head>
+</html>
