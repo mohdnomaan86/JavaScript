@@ -1,0 +1,53 @@
+body{
+    background-color: grey;
+    margin-top :100px;
+    border-radius: 4px;
+    padding: 300px 0;
+}
+#div1{
+    align-self: center;
+    width: 30%;
+    height: 40%;
+    background-color: white;
+    border-radius: 5px;
+    margin:0 auto;
+}
+#div2{
+    border-radius: 5px 5px 0px 0px;
+    background-color: tomato;
+    color: white;
+    font-size: 3em;
+   
+    text-align: center;
+}
+.paragraph{
+    margin-left: 10px;
+    color:grey;
+    
+}
+.greyy{
+    background-color: lightgrey;
+    margin-left: 10px;
+    border-collapse: collapse;
+    color: grey;
+    width: 60%;
+    font-size: 20px;
+}
+#sub{
+
+    color: white;
+    align-self: center;
+    height: 3em;
+    width: 150px;
+    font-size: 20px;
+    background-color: green;
+    margin-left: 30%;
+    border-bottom: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+#red{
+    margin-left: 10px;
+    color:red;
+
+}

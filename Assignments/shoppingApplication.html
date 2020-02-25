@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment-3</title>
+        <link rel="stylesheet" href="newassignment.css">
+        <script>
+            function decrement(id){
+                let element = document.getElementById(id);
+                var z = element.value;
+                z = z-1;
+                (z<0)?element.value=0:element.value=z;
+            }
+            function increment(id){
+                var z =parseInt(document.getElementById(id).value);
+                z = z+1;
+                document.getElementById(id).value= z;
+            }
+            function checkout()
+            {
+                var x = parseInt(document.getElementById("shirt").value);
+                var y = parseInt(document.getElementById("jeans").value);
+                var z = parseInt(document.getElementById("chinos").value);
+                var k = parseInt(document.getElementById("suits").value);
+                
+                var total = (x*400)+(y*800)+(z*1000)+(k*4000);
+                confirm("Total amount is "+total+"/- continue?");
+            }
+            
+        </script>
+
+    </head>
+    <body>
+        <div>
+                <div id="div1">
+                    <ul id="ul1">
+                        <li id="title"><b>GangScape</b></li>
+                        <li class="nav"><a  href="#Home">Home</a></li>
+                        <li class="nav"><a  href="#Men">Men</a></li>
+                        <li class="nav"><a  href="Women">Women</a></li>
+                        <li class="nav"><a href="#All">All</a></li>
+                        <li><input id="cart" type="button" value="Check out" onclick="checkout()" style="border: none;"></li>
+                    </ul>
+                </div>
+                <div id="clothesdiv">
+                <div id="div2">
+                    <h1>Clothes</h1><br/>
+                    <div class="row">
+                    <div class="card">
+                        <img src="clothes/shirt.jpg" height="250px" width="270px">
+                        <p style="font-size: 30px;margin: 0;"><b>Shirts</b></p>
+                        <input type="number" value="0"  id="shirt" style="width: 42px;margin-left: 3px;"> 
+                        <input type="button" id="minus1" value="-" onclick="decrement('shirt')">
+                        <input type="button" id="plus1" value="+" onclick="increment('shirt')">
+                        <input type="button" value="400/-">
+                         
+                    </div>
+                        <div class="card">
+                            <img src="clothes/jeans.jpg" height="250px" width="270px">
+                            <p style="font-size: 30px;margin: 0;"><b>Jeans</b></p>
+                            <input type="number" value="0" id="jeans" style="width: 42px;margin-left: 3px;"> 
+                            <input type="button" id="minus2" value="-"onclick="decrement('jeans')">
+                            <input type="button" id="plus2" value="+" onclick="increment('jeans')">
+                            <input type="button" value="800/-">
+                    </div>
+                        <div class="card">
+                            <img src="clothes/chinos.jpg" height="250px" width="270px">
+                            <p style="font-size: 30px;margin: 0;"><b>Chinos</b></p>
+                            <input type="number" value="0" id="chinos" style="width: 42px;margin-left: 3px;"> 
+                            <input type="button" id="minus3" value="-"onclick="decrement('chinos')">
+                            <input type="button" id="plus3" value="+"onclick="increment('chinos')">
+                            <input type="button" value="1000/-">
+                            
+                    </div>  
+                        <div class="card">
+                            <img src="clothes/suits.jpg" height="250px" width="270px">
+                            <p style="font-size: 30px;margin: 0;"><b>Suits</b></p>
+                            <input type="number" value="0" id="suits" style="width: 42px; margin-left: 3px;"> 
+                            <input type="button" id="minus4" value="-"onclick="decrement('suits')">
+                            <input type="button" id="plus4" value="+"onclick="increment('suits')">
+                            <input type="button" value="4000/-">
+                    </div>
+                        
+                        
+            </div>
+                
+        
+    
+    </body>
+</html>

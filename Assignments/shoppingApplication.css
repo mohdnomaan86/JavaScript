@@ -1,0 +1,82 @@
+#clothesdiv{
+    border:1px solid black;
+    height: 630px;
+}
+
+
+body{
+    background-color: beige;
+}
+
+#ul1{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    background-color: #2574f6;
+}
+li{
+    float:left;
+}
+li a{
+    display: block;
+    color: white;
+    padding: 14px 130px;
+    text-align: center;
+    font-size: 20px;
+    ;
+    
+}
+#title{
+    color:white;
+    font-size: 20px;
+    padding-left: 50px;
+    padding-top:14px;
+}
+#div2{
+    margin-left:30px;
+}
+ul{
+    list-style-type: none;
+}
+.shop{
+    padding-left: 20px;
+}
+.tags{
+    margin-left: 280px;
+}
+.price{
+    margin-left : 260px;
+    margin-top:0;
+}
+.total
+{
+    margin-left:300px;
+    width:40px;
+}
+
+.card {
+    margin: 5px;
+    
+    border: 2px solid #bababa;
+    border-radius: 3px;
+    width: 20%;
+    height: 310px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin-left: 125px;
+}
+#cart{
+
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    background-color: #2574f6;
+    height:50px;
+    font-size: 20px;
+    color: white;
+    border-collapse: collapse;
+}
