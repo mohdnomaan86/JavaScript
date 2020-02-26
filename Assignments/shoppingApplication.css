@@ -1,82 +1,121 @@
-#clothesdiv{
-    border:1px solid black;
-    height: 630px;
+#clothesdiv {
+  border: 1px solid black;
+  height: 430px;
 }
 
-
-body{
-    background-color: beige;
+#shoesdiv {
+  border: 1px solid black;
+  height: 430px;
 }
 
-#ul1{
-    list-style-type: none;
-    margin:0;
-    padding:0;
-    overflow: hidden;
-    background-color: #2574f6;
+#accessoriesdiv {
+  border: 1px solid black;
+  height: 430px;
 }
-li{
-    float:left;
+
+body {
+  background-color: beige;
 }
-li a{
-    display: block;
-    color: white;
-    padding: 14px 130px;
-    text-align: center;
-    font-size: 20px;
-    ;
-    
+
+#ul1 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #2574f6;
 }
-#title{
-    color:white;
-    font-size: 20px;
-    padding-left: 50px;
-    padding-top:14px;
+
+li {
+  float: left;
 }
-#div2{
-    margin-left:30px;
+
+li a {
+  display: block;
+  color: white;
+  padding: 14px 130px;
+  text-align: center;
+  font-size: 20px;
+  ;
+
 }
-ul{
-    list-style-type: none;
+
+#title {
+  color: white;
+  font-size: 20px;
+  padding-left: 50px;
+  padding-top: 10px;
 }
-.shop{
-    padding-left: 20px;
+
+#div2 {
+  margin-left: 30px;
 }
-.tags{
-    margin-left: 280px;
+
+ul {
+  list-style-type: none;
 }
-.price{
-    margin-left : 260px;
-    margin-top:0;
+
+.shop {
+  padding-left: 20px;
 }
-.total
-{
-    margin-left:300px;
-    width:40px;
+
+.tags {
+  margin-left: 280px;
+}
+
+.price {
+  margin-left: 260px;
+  margin-top: 0;
+}
+
+.total {
+  margin-left: 300px;
+  width: 40px;
 }
 
 .card {
-    margin: 5px;
-    
-    border: 2px solid #bababa;
-    border-radius: 3px;
-    width: 20%;
-    height: 310px;
+  margin: 5px;
+
+  border: 2px solid #bababa;
+  border-radius: 3px;
+  width: 20%;
+  height: 310px;
 }
 
 .row {
-    display: flex;
-    flex-direction: row;
-    margin-left: 125px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 125px;
 }
-#cart{
 
-    margin:0;
-    padding:0;
-    overflow: hidden;
-    background-color: #2574f6;
-    height:50px;
-    font-size: 20px;
-    color: white;
-    border-collapse: collapse;
+#cart {
+
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #2574f6;
+  font-size: 20px;
+  color: white;
+  border-collapse: collapse;
+  cursor: pointer;
+}
+
+.dropp {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dropp-content {
+  position: absolute;
+  display: none;
+  min-width: 150px;
+  height: 150px;
+  background-color: beige;
+  padding: 14px 16px;
+  box-shadow: 0PX 8px 16px 0px rgba(0, 0, 0, 2);
+  z-index: 1;
+  right: 0px;
+}
+
+.dropp:hover .dropp-content {
+  display: block;
 }
