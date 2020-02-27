@@ -77,7 +77,7 @@ ul {
   border: 2px solid #bababa;
   border-radius: 3px;
   width: 20%;
-  height: 310px;
+  height: 315px;
 }
 
 .row {
@@ -107,15 +107,28 @@ ul {
 .dropp-content {
   position: absolute;
   display: none;
-  min-width: 150px;
-  height: 150px;
+  min-width: 300px;
   background-color: beige;
   padding: 14px 16px;
   box-shadow: 0PX 8px 16px 0px rgba(0, 0, 0, 2);
   z-index: 1;
+  max-height: 500px;
   right: 0px;
+  overflow: auto;
+  word-spacing: 10px;
+  text-transform: uppercase;
 }
+
 
 .dropp:hover .dropp-content {
   display: block;
+}
+
+.bar {
+  margin-top: 2px;
+  border-top: 1px solid black;
+}
+
+#totalTable tr:last-child td:last-child {
+  border-top: 1px solid
 }

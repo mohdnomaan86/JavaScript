@@ -9,7 +9,7 @@
 
     function decrement(id) {
       let element = document.getElementById(id);
-      var z = element.value;
+      var z = parseInt(element.value);
       z = z - 1;
       (z < 0) ? element.value = 0: element.value = z;
     }
@@ -21,39 +21,89 @@
     }
 
     function addToCart(id, price, isIncrement) {
+      var isItemFound = false;
       if (isIncrement) {
         increment(id);
       } else {
         decrement(id);
       }
-      if (cartArray.length == 0) {
+
+      for (var i = 0; i < cartArray.length; i++) {
+        if (cartArray[i].item == id) {
+          isItemFound = true;
+          cartArray[i].count = parseInt(document.getElementById(id).value);
+        }
+      }
+      if (!isItemFound) {
         cartArray.push({
           item: id,
           price: price,
           count: parseInt(document.getElementById(id).value)
         });
+      }
+      console.log(cartArray);
+    }
 
+    function deleteChild() {
+      var e = document.querySelector("table");
+      var first = e.firstElementChild;
+      while (first) {
+        first.remove();
+        first = e.firstElementChild;
+      }
+    }
+
+    function checkout() {
+      var grandTotal = 0;
+
+      var k = document.querySelector("p");
+
+      if (cartArray.length == 0) {
+
+        k.remove();
+        var cartEmpty = document.createElement("p");
+        cartEmpty.innerHTML = "No items Selected!";
+        document.getElementsByClassName("dropp-content")[0].appendChild(cartEmpty);
       } else {
+        deleteChild();
+        if (k)
+          k.remove();
         for (var i = 0; i < cartArray.length; i++) {
-
-          if (cartArray[i].item == id) {
-            cartArray[i].count += 1;
-
-          } else if (cartArray[i].item == id && !isIncrement) {
-            cartArray[i].count -= 1;
-          } else {
-            cartArray.push({
-              item: id,
-              price: price,
-              count: parseInt(document.getElementById(id).value - 1)
-            })
-          }
-
+          var table = document.getElementById("totalTable");
+          var row = table.insertRow(0);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+          var cell5 = row.insertCell(4);
+          var cell6 = row.insertCell(5);
+          var cell7 = row.insertCell(6);
+          cell1.innerHTML = cartArray[i].item;
+          cell2.innerHTML = cartArray[i].count;
+          cell3.innerHTML = "X";
+          cell4.innerHTML = cartArray[i].price;
+          cell5.innerHTML = "=";
+          cell6.innerHTML = (cartArray[i].count * cartArray[i].price);
+          grandTotal += cartArray[i].count * cartArray[i].price;
         }
+        var table = document.getElementById("totalTable");
+        var row = table.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        cell1.innerHTML = "";
+        cell2.innerHTML = "";
+        cell3.innerHTML = "";
+        cell4.innerHTML = "TOTAL";
+        cell5.innerHTML = "=";
+        cell6.innerHTML = grandTotal;
+        //document.getElementById("totalrow").innerHTML = grandTotal;
+        //document.getElementById("nametotal").innerHTML = "TOTAL"
 
       }
-
-      console.log(cartArray);
     }
   </script>
 
@@ -73,7 +123,9 @@
               onmouseover="checkout()">
 
             <div class="dropp-content">
-              <p id="menupara"></p>
+              <p></p>
+
+              <table id="totalTable"></table>
             </div>
           </div>
         </div>
@@ -85,7 +137,7 @@
         <div class="row">
           <div class="card">
             <img src="clothes/shirt.jpg" height="250px" width="270px">
-            <p style="font-size: 30px;margin: 0;padding-left: 2px;"><b>Shirts</b></p>
+            <h2 style="font-size: 30px;margin: 0;padding-left: 2px"><b>Shirts</b></h2>
             <input type="number" value="0" id="shirt" style="width: 42px;margin-left: 3px;">
             <input type="button" id="minus1" value="-" onclick="addToCart('shirt',400, false)">
             <input type="button" id="plus1" value="+" onclick="addToCart('shirt',400, true)">
@@ -94,7 +146,7 @@
           </div>
           <div class="card">
             <img src="clothes/jeans.jpg" height="250px" width="270px">
-            <p style="font-size: 30px;margin: 0;padding-left: 2px"><b>Jeans</b></p>
+            <h2 style="font-size: 30px;margin: 0;padding-left: 2px"><b>Jeans</b></h2>
             <input type="number" value="0" id="jeans" style="width: 42px;margin-left: 3px;">
             <input type="button" id="minus2" value="-" onclick="addToCart('jeans',800, false)">
             <input type="button" id="plus2" value="+" onclick="addToCart('jeans',800, true)">
@@ -102,7 +154,7 @@
           </div>
           <div class="card">
             <img src="clothes/chinos.jpg" height="250px" width="270px">
-            <p style="font-size: 30px;margin: 0;padding-left: 2px"><b>Chinos</b></p>
+            <h2 style="font-size: 30px;margin: 0;padding-left: 2px"><b>Chinos</b></h2>
             <input type="number" value="0" id="chinos" style="width: 42px;margin-left: 3px;">
             <input type="button" id="minus3" value="-" onclick="addToCart('chinos',1000, false)">
             <input type="button" id="plus3" value="+" onclick="addToCart('chinos',1000, true)">
@@ -111,7 +163,7 @@
           </div>
           <div class="card">
             <img src="clothes/suits.jpg" height="250px" width="270px">
-            <p style="font-size: 30px;margin: 0;padding-left: 2px"><b>Suits</b></p>
+            <h2 style="font-size: 30px;margin: 0;padding-left: 2px"><b>Suits</b></h2>
             <input type="number" value="0" id="suits" style="width: 42px; margin-left: 3px;">
             <input type="button" id="minus4" value="-" onclick="addToCart('suits', 4000,false)">
             <input type="button" id="plus4" value="+" onclick="addToCart('suits', 4000,true)">
@@ -128,7 +180,7 @@
         <div class="row">
           <div class="card">
             <img src="shoes/formal.jpg" height="250px" width="270px">
-            <p style="font-size: 30px;margin: 0;padding-left: 2px"><b>Formals</b></p>
+            <h2 style="font-size: 30px;margin: 0;padding-left: 2px"><b>Formals</b></h2>
             <input type="number" value="0" id="formal" style="width: 42px;margin-left: 3px;">
             <input type="button" id="minus5" value="-" onclick="addToCart('formal',800,false)">
             <input type="button" id="plus5" value="+" onclick="addToCart('formal',800,true)">
@@ -137,7 +189,7 @@
           </div>
           <div class="card">
             <img src="shoes/boots.jpg" height="250px" width="270px">
-            <p style="font-size: 30px;margin: 0;padding-left: 2px"><b>Boots</b></p>
+            <h2 style="font-size: 30px;margin: 0;padding-left: 2px"><b>Boots</b></h2>
             <input type="number" value="0" id="boots" style="width: 42px;margin-left: 3px;">
             <input type="button" id="minus6" value="-" onclick="addToCart('boots',3000,false)">
             <input type="button" id="plus6" value="+" onclick="addToCart('boots',3000,true)">
@@ -145,7 +197,7 @@
           </div>
           <div class="card">
             <img src="shoes/sneakers.jpg" height="250px" width="270px">
-            <p style="font-size: 30px;margin: 0;padding-left: 2px"><b>Sneakers</b></p>
+            <h2 style="font-size: 30px;margin: 0;padding-left: 2px"><b>Sneakers</b></h2>
             <input type="number" value="0" id="sneakers" style="width: 42px;margin-left: 3px;">
             <input type="button" id="minus7" value="-" onclick="addToCart('sneakers',1400,false)">
             <input type="button" id="plus7" value="+" onclick="addToCart('sneakers',1400,true)">
@@ -154,7 +206,7 @@
           </div>
           <div class="card">
             <img src="shoes/sandals.jpg" height="250px" width="270px">
-            <p style="font-size: 30px;margin: 0;padding-left: 2px"><b>Sandals</b></p>
+            <h2 style="font-size: 30px;margin: 0;padding-left: 2px"><b>Sandals</b></h2>
             <input type="number" value="0" id="sandals" style="width: 42px; margin-left: 3px;">
             <input type="button" id="minus8" value="-" onclick="addToCart('sandals',600,false)">
             <input type="button" id="plus8" value="+" onclick="addToCart('sandals',600,true)">
@@ -172,7 +224,7 @@
         <div class="row">
           <div class="card">
             <img src="accessories/sunglasses.jpg" height="250px" width="270px">
-            <p style="font-size: 30px;margin: 0;padding-left: 2px"><b>Sunglasses</b></p>
+            <h2 style="font-size: 30px;margin: 0;padding-left: 2px"><b>Sunglasses</b></h2>
             <input type="number" value="0" id="sunglasses" style="width: 42px;margin-left: 3px;">
             <input type="button" id="minus9" value="-" onclick="addToCart('sunglasses',1500,false)">
             <input type="button" id="plus9" value="+" onclick="addToCart('sunglasses',1500,true)">
@@ -181,7 +233,7 @@
           </div>
           <div class="card">
             <img src="accessories/bracelets.jpg" height="250px" width="270px">
-            <p style="font-size: 30px;margin: 0;padding-left: 2px"><b>Bracelets</b></p>
+            <h2 style="font-size: 30px;margin: 0;padding-left: 2px"><b>Bracelets</b></h2>
             <input type="number" value="0" id="bracelets" style="width: 42px;margin-left: 3px;">
             <input type="button" id="minus10" value="-" onclick="addToCart('bracelets',250,false)">
             <input type="button" id="plus10" value="+" onclick="addToCart('bracelets',250,true)">
@@ -189,7 +241,7 @@
           </div>
           <div class="card">
             <img src="accessories/chains.jpg" height="250px" width="270px">
-            <p style="font-size: 30px;margin: 0;padding-left: 2px"><b>Chains</b></p>
+            <h2 style="font-size: 30px;margin: 0;padding-left: 2px"><b>Chains</b></h2>
             <input type="number" value="0" id="chains" style="width: 42px;margin-left: 3px;">
             <input type="button" id="minus11" value="-" onclick="addToCart('chains',300,false)">
             <input type="button" id="plus11" value="+" onclick="addToCart('chains',300,true)">
@@ -198,7 +250,7 @@
           </div>
           <div class="card">
             <img src="accessories/necklaces.jpg" height="250px" width="270px">
-            <p style="font-size: 30px;margin: 0;padding-left: 2px"><b>Necklaces</b></p>
+            <h2 style="font-size: 30px;margin: 0;padding-left: 2px"><b>Necklaces</b></h2>
             <input type="number" value="0" id="necklaces" style="width: 42px; margin-left: 3px;">
             <input type="button" id="minus12" value="-" onclick="addToCart('necklaces',650,false)">
             <input type="button" id="plus12" value="+" onclick="addToCart('necklaces',650,true)">
